@@ -1,0 +1,191 @@
+<!--This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0-->
+<eagle version="7.1.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="450404015514">
+<description>&lt;B&gt;WS-SLSU&lt;/B&gt;&lt;BR&gt; Mini Slide Switch, Same Side Connection Side Push 6.7x2.7 mm</description>
+<wire x1="3.35" y1="1.35" x2="3.35" y2="-1.35" width="0.1" layer="51"/>
+<wire x1="3.35" y1="-1.35" x2="-3.35" y2="-1.35" width="0.1" layer="51"/>
+<wire x1="-3.35" y1="-1.35" x2="-3.35" y2="1.35" width="0.1" layer="51"/>
+<wire x1="-3.35" y1="1.35" x2="0.09" y2="1.35" width="0.1" layer="51"/>
+<wire x1="0.09" y1="1.35" x2="1.39" y2="1.35" width="0.1" layer="51"/>
+<wire x1="1.39" y1="1.35" x2="3.35" y2="1.35" width="0.1" layer="51"/>
+<wire x1="0.09" y1="1.35" x2="0.09" y2="2.85" width="0.1" layer="51"/>
+<wire x1="0.09" y1="2.85" x2="1.39" y2="2.85" width="0.1" layer="51"/>
+<wire x1="1.39" y1="2.85" x2="1.39" y2="1.35" width="0.1" layer="51"/>
+<wire x1="-2.9" y1="1.45" x2="-0.01" y2="1.45" width="0.2" layer="21"/>
+<wire x1="-0.01" y1="1.45" x2="-0.01" y2="2.95" width="0.2" layer="21"/>
+<wire x1="-0.01" y1="2.95" x2="1.49" y2="2.95" width="0.2" layer="21"/>
+<wire x1="1.49" y1="2.95" x2="1.49" y2="1.45" width="0.2" layer="21"/>
+<wire x1="1.49" y1="1.45" x2="2.9" y2="1.45" width="0.2" layer="21"/>
+<wire x1="-3.45" y1="0.4" x2="-3.45" y2="-0.4" width="0.2" layer="21"/>
+<wire x1="3.45" y1="-0.4" x2="3.45" y2="0.4" width="0.2" layer="21"/>
+<wire x1="-0.1" y1="-1.45" x2="1.6" y2="-1.45" width="0.2" layer="21"/>
+<text x="-3.1" y="2.5" size="1.016" layer="25" align="bottom-center">&gt;NAME</text>
+<text x="-2.7" y="-4.3" size="1.016" layer="27">&gt;VALUE</text>
+<circle x="1.7" y="-0.9" radius="0.1" width="0.2" layer="21"/>
+<polygon width="0.1" layer="39">
+<vertex x="-0.21" y="3.15"/>
+<vertex x="1.7" y="3.15"/>
+<vertex x="1.7" y="1.75"/>
+<vertex x="4.45" y="1.75"/>
+<vertex x="4.45" y="-1.75"/>
+<vertex x="2.8" y="-1.75"/>
+<vertex x="2.8" y="-2.8"/>
+<vertex x="-2.8" y="-2.8"/>
+<vertex x="-2.8" y="-1.75"/>
+<vertex x="-4.45" y="-1.75"/>
+<vertex x="-4.45" y="1.75"/>
+<vertex x="-0.21" y="1.75"/>
+</polygon>
+<smd name="1" x="2.25" y="-2.05" dx="0.7" dy="1.1" layer="1"/>
+<smd name="2" x="-0.75" y="-2.05" dx="0.7" dy="1.1" layer="1"/>
+<smd name="3" x="-2.25" y="-2.05" dx="0.7" dy="1.1" layer="1"/>
+<smd name="Z1" x="-3.75" y="1.15" dx="1" dy="0.8" layer="1"/>
+<smd name="Z2" x="3.75" y="1.15" dx="1" dy="0.8" layer="1"/>
+<smd name="Z3" x="3.75" y="-1.15" dx="1" dy="0.8" layer="1"/>
+<smd name="Z4" x="-3.75" y="-1.15" dx="1" dy="0.8" layer="1"/>
+<hole x="-1.5" y="0" drill="0.9"/>
+<hole x="1.5" y="0" drill="0.9"/>
+</package>
+</packages>
+<symbols>
+<symbol name="WS-SLSU">
+<description>WS-SLSU</description>
+<text x="-2.41" y="-5.12" size="1.27" layer="96">&gt;VALUE</text>
+<text x="2.14" y="4.11" size="1.27" layer="95" align="bottom-center">&gt;NAME</text>
+<text x="-3.3" y="-1.8" size="1.27" layer="94">com</text>
+<circle x="1.905" y="-2.54" radius="0.508" width="0.254" layer="94"/>
+<circle x="1.905" y="2.54" radius="0.508" width="0.254" layer="94"/>
+<polygon width="0.254" layer="94">
+<vertex x="-2.032" y="-0.508" curve="-90"/>
+<vertex x="-2.54" y="0" curve="-90"/>
+<vertex x="-2.032" y="0.508" curve="-90"/>
+<vertex x="-1.524" y="0" curve="-90"/>
+</polygon>
+<wire x1="-1.646" y1="0.5" x2="0.885228" y2="2.3282" width="0.254" layer="94"/>
+<wire x1="-0.101683" y1="1.6154" x2="1.4" y2="2.7" width="0.254" layer="94"/>
+<pin name="1" x="5.08" y="2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="2" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+<pin name="3" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="450404015514" prefix="S">
+<description>&lt;b&gt;WS-SLSU Mini Slide Switch, Same Side Connection Side Push 6.7x2.7 mm&lt;/B&gt;&lt;BR&gt;&lt;BR&gt;
+&lt;B&gt;Properties&lt;/B&gt;&lt;BR&gt;
+&lt;BR&gt;Actuator Material:PA46
+&lt;BR&gt;Actuator Flammability Rating:UL94 HB
+&lt;BR&gt;Actuator Color:Black
+&lt;BR&gt;Frame Material:LCP
+&lt;BR&gt;Frame Flammability Rating:UL94 V-0
+&lt;BR&gt;Frame Color:Black
+&lt;BR&gt;Contact Material:Copper Alloy
+&lt;BR&gt;Contact Plating:Silver
+&lt;BR&gt;Terminal Material:Copper Alloy
+&lt;BR&gt;Terminal Plating:Silver
+&lt;BR&gt;Switching Function:On-On
+&lt;BR&gt;Schematic:SPDT
+&lt;BR&gt;Connection Type:Same Side Connection
+&lt;BR&gt;Qty.:3300
+&lt;BR&gt;
+&lt;BR&gt;
+&lt;B&gt;Material Properties&lt;/B&gt;
+&lt;BR&gt;Cover Material:Stainless Steel
+&lt;BR&gt;
+&lt;BR&gt;
+&lt;B&gt;General Information&lt;/B&gt;
+&lt;BR&gt;Operating Temperature:-40 up to +85 °C
+&lt;BR&gt;
+&lt;BR&gt;
+&lt;B&gt;Packaging Properties&lt;/B&gt;
+&lt;BR&gt;Packaging :Tape and Reel
+&lt;BR&gt;&lt;BR&gt;
+&lt;BR&gt;
+&lt;br&gt;&lt;a href="https://www.we-online.com/catalog/media/o76706v209%20Family_WS-SLSU_Gruppe.jpg" title="Enlarge picture"&gt;
+&lt;img src="https://www.we-online.com/catalog/media/o76706v209%20Family_WS-SLSU_Gruppe.jpg"  width="320"&gt;&lt;/a&gt;&lt;p&gt;
+&lt;/b&gt;&lt;br&gt;            
+Details see: &lt;a href="https://www.we-online.com/catalog/en/SLSU_6_7X_2_7_SMD_HORIZONTAL/"&gt;https://www.we-online.com/catalog/en/SLSU_6_7X_2_7_SMD_HORIZONTAL/&lt;/a&gt;&lt;p&gt;
+&lt;br&gt;Updated by yingchun,Shan;2020-02-25
+&lt;br&gt;2020(C) Würth Elektronik  </description>
+<gates>
+<gate name="G$1" symbol="WS-SLSU" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="450404015514">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="IR" value="300mA"/>
+<attribute name="QTY" value=" 150 "/>
+<attribute name="PACKAGING" value="Tape and Reel "/>
+<attribute name="VR" value="5V(DC)"/>
+<attribute name="DATASHEET-URL" value="https://www.we-online.com/catalog/datasheet/450404015514.pdf"/>
+<attribute name="PART-NUMBER" value="450404015514"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
