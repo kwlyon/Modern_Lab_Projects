@@ -1,0 +1,17 @@
+# Default text handling for source files.
+* text=auto
+
+# Preserve CAD and manufacturing outputs exactly as exported.
+*.brd -text
+*.sch -text
+*.pro -text
+*.epf -text
+*.lbr -text
+*.l#* -text
+*.gbr -text
+*.gbrjob -text
+*.xln -text
+*.dri -text
+*.mnt -text
+*.mnb -text
+
