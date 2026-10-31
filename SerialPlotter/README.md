@@ -69,4 +69,6 @@ Arduino Shield for Aquisition/
 
 These files document earlier shield revisions. For the current differential
 AIN0−AIN1 and AIN2−AIN3 shield and its `Frank_Herz_DAQ.ino` firmware, follow the
-Serial Plotter V3 hardware instructions.
+[Serial Plotter V3 hardware instructions](../SerialPlotter_V3/hardware/README.md).
+The archived `AquisitionBoardV3.brd` in this folder still places a 15-turn
+Bourns 3006P trimmer; it is a different board from the current V3 design.

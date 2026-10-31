@@ -15,6 +15,11 @@ board; **do not flash V2's `Uno_Sketch.ino`**, which uses older single-ended
 ADC readings. Both sketches announce protocol version 4, so the desktop app
 cannot distinguish them from the handshake alone.
 
+The current shield's [Eagle schematic and board](hardware/README.md) are kept
+under `hardware/Eagle_Cad/`. Their top silkscreen has circled A and B labels;
+the older files with the same Eagle names and a large trimmer remain archived
+in `SerialPlotter/Arduino Shield for Aquisition/Eagle_Cad/`.
+
 | Plotter input | Shield connector | ADS1115 measurement | Factory divider |
 | --- | --- | --- | --- |
 | Channel A | J1 | AIN0 − AIN1 | 909 kΩ high, 101 kΩ low |

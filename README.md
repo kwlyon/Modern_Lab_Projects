@@ -9,7 +9,7 @@ differential Arduino firmware is maintained in `Frank_Herz` and also used by
 | [Frank_Herz](Frank_Herz/README.md) | Franck–Hertz acquisition software and differential Arduino shield firmware |
 | [SerialPlotter](SerialPlotter/README.md) | Original serial plotter and earlier shield designs |
 | [SerialPlotter_V2](SerialPlotter_V2/README.md) | Two-channel recorder with the older single-ended Arduino sketch |
-| [SerialPlotter_V3](SerialPlotter_V3/README.md) | General recorder for the current differential shield and Arduino averaging |
+| [SerialPlotter_V3](SerialPlotter_V3/README.md) | General recorder, Eagle design for the current differential shield, and Arduino averaging |
 
 The three original projects were imported with unsquashed Git subtree merges.
 Their commits remain in this repository's history. Frank_Herz release tags are retained

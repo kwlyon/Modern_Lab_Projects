@@ -13,6 +13,8 @@ instead of keeping a separate copy. This desktop application remains
 specifically configured for the Franck–Hertz experiment. The retired analog
 gain-switching hardware and its compatibility protocol are not part of this
 firmware or desktop application.
+The [current differential shield Eagle files](../SerialPlotter_V3/hardware/README.md)
+are stored with Serial Plotter V3.
 
 ## Hardware architecture
 
