@@ -6,6 +6,13 @@ schematic and board for the current Modern Lab shield. They were copied from
 the Modern Lab **Atomic and Molecular / Arduino Shield for Aquisition** Eagle
 project. Their original Eagle filenames are retained.
 
+[`Eagle_Cad/AquisitionBoardV3_Gerbers.zip`](Eagle_Cad/AquisitionBoardV3_Gerbers.zip)
+contains the corresponding fabrication outputs. The archive was copied from
+that project's `CAMOutputs/GerberFiles/AquisitionV3.zip` and renamed to match
+the board and schematic. Its Gerber job identifies project `AquisitionBoardV3`
+and includes copper, solder mask, solder paste, silkscreen, board profile, and
+drill files. The original archive remains in the Eagle project.
+
 The board's top silkscreen has circled **A** and **B** labels. Unlike the older
 files with the same names in
 [`../../SerialPlotter/Arduino Shield for Aquisition/Eagle_Cad/`](../../SerialPlotter/Arduino%20Shield%20for%20Aquisition/Eagle_Cad/),
