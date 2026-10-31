@@ -15,6 +15,8 @@ gain-switching hardware and its compatibility protocol are not part of this
 firmware or desktop application.
 The [current differential shield Eagle files](../SerialPlotter_V3/hardware/README.md)
 are stored with Serial Plotter V3.
+The separate [Frank–Hertz transimpedance amplifier schematic and board](hardware/transimpedance_amplifier/README.md)
+are archived here.
 
 ## Hardware architecture
 

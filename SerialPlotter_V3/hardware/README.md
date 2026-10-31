@@ -13,6 +13,17 @@ the board and schematic. Its Gerber job identifies project `AquisitionBoardV3`
 and includes copper, solder mask, solder paste, silkscreen, board profile, and
 drill files. The original archive remains in the Eagle project.
 
+[`Mouser_BOM_Differential_Arduino_Shield_One_Board.xlsx`](Mouser_BOM_Differential_Arduino_Shield_One_Board.xlsx)
+is a one-board parts list based on this board's placed elements. It uses the
+columns from the supplied Mouser template, with added designators, footprints,
+selection notes, and product links. The 21 order lines cover 56 individual
+parts or kits, including one Arduino R3 stacking-header kit. The Arduino and
+fabricated PCB are not included. SJ1/SJ2 are solder jumper pads and TP1 is a
+bare test pad, so they do not need purchased parts. The optional AGND/BGND
+header posts are listed. Check the J2 DE-9 connector's physical fit against
+the Eagle footprint before ordering; its manufacturer part number is a
+candidate selection. Prices and availability should be refreshed in Mouser.
+
 The board's top silkscreen has circled **A** and **B** labels. Unlike the older
 files with the same names in
 [`../../SerialPlotter/Arduino Shield for Aquisition/Eagle_Cad/`](../../SerialPlotter/Arduino%20Shield%20for%20Aquisition/Eagle_Cad/),
