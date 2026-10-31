@@ -16,7 +16,13 @@ subfolder trees. The twelve Frank–Herz Git release tags are retained as
 `Frank_Herz/v...` tags to avoid version-name collisions between projects.
 
 GitHub release descriptions and downloadable assets are separate from Git
-history. Their migration is tracked separately from these source commits.
+history. All twelve Frank–Herz releases and their 27 attachments were copied
+to this repository under the `Frank_Herz/v...` tags. Asset names, sizes, and
+GitHub-reported SHA-256 digests matched the originals. Original publication
+dates are recorded in the migrated release descriptions. The old-to-new asset
+URL and digest mapping is saved in the local migration backup.
+
 Verified Git bundles for all three original repositories are saved alongside
 this checkout in `Modern_Lab_Projects_migration_backup/` on the migration
-machine. The original local checkouts also remain in place.
+machine. The original local checkouts also remain in place. A local Frank_Herz
+stash was preserved in its bundle and original checkout; it was not published.

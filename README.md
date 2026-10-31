@@ -15,3 +15,5 @@ under `Frank_Herz/v...` names so they remain distinct from future tags for other
 projects.
 
 See each project's README for build, calibration, and hardware instructions.
+Frank–Hertz Windows downloads and firmware attachments are available on the
+[releases page](https://github.com/kwlyon/Modern_Lab_Projects/releases).
