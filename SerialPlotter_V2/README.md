@@ -1,10 +1,12 @@
 # Serial Plotter V2
 
 Serial Plotter V2 is a general-purpose two-channel voltage strip recorder for
-the Modern Lab Arduino acquisition shield. It uses the same tested protocol-v4
-Uno firmware, EEPROM resistor-divider calibration, and independent ADS1115
-autoranging as the Franck–Hertz system, but contains no experiment-specific X–Y
-plot or current calibration.
+an earlier Modern Lab Arduino acquisition shield setup. Its bundled protocol-v4
+Uno sketch reads ADS1115 **single-ended AIN0 and AIN2** inputs, with EEPROM
+resistor-divider calibration and independent ADC autoranging. It has no
+experiment-specific X–Y plot or current calibration. For the current
+**differential** Franck–Hertz shield and sketch, use
+[Serial Plotter V3](../SerialPlotter_V3/README.md).
 
 ## Project layout
 
@@ -20,9 +22,10 @@ SerialPlotter_V2/
 └── README.md
 ```
 
-The folder name `Arduino Shield for Aquisition` is intentionally retained as
-specified. `Uno_Sketch.ino` is a direct copy of the working Franck–Hertz
-dual-channel firmware.
+The folder name `Arduino Shield for Aquisition` is retained from the original
+project. `Uno_Sketch.ino` is the older single-ended firmware; it is **not** a
+copy of the current differential `Frank_Herz_DAQ.ino`. Both announce protocol
+version 4, so the handshake alone does not prove which input mode is uploaded.
 
 ## Running the application
 

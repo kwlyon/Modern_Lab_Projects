@@ -1,12 +1,12 @@
 # SerialPlotter
 
-SerialPlotter is a Python/Tkinter real-time serial plotting tool for the Modern Lab data acquisition hardware. The current application connects to an Arduino-based shield over a serial port, waits for the `Modern Lab Data Acquisition Shield` handshake banner, and plots incoming measurements live with Matplotlib.
+SerialPlotter is the original Python/Tkinter real-time serial plotting tool for earlier Modern Lab data acquisition hardware. Its `recorder4.py` application connects to an Arduino-based shield over a serial port, waits for the `Modern Lab Data Acquisition Shield` handshake banner, and plots incoming measurements live with Matplotlib. For the current differential shield and Frank–Herz Arduino sketch, use [Serial Plotter V3](../SerialPlotter_V3/README.md).
 
 This repository contains the Python plotting application, PyInstaller build specifications, Eagle CAD files for the Arduino shield, CAM/manufacturing outputs, and Arduino Uno sketches used with the shield.
 
-## Current Contents
+## Contents
 
-- `recorder4.py` - current StreamPlot application entry point.
+- `recorder4.py` - latest StreamPlot entry point in this legacy folder.
 - `StreamPlot.spec` - PyInstaller spec for building the StreamPlot executable.
 - `recorder.py`, `recorder2.py`, `recorder3.py` - earlier development versions kept for reference.
 - `recorder.spec` - earlier PyInstaller spec.
@@ -67,4 +67,6 @@ Arduino Shield for Aquisition/
   Uno_Sketches/
 ```
 
-As the project settles, this section can be expanded with notes about board revisions, firmware versions, expected serial output format, and lab setup details.
+These files document earlier shield revisions. For the current differential
+AIN0−AIN1 and AIN2−AIN3 shield and its `Frank_Herz_DAQ.ino` firmware, follow the
+Serial Plotter V3 hardware instructions.

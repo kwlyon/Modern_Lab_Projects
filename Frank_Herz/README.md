@@ -6,9 +6,11 @@ title is **Franck–Hertz Data Acquisition**. Its Franck–Hertz X–Y character
 two-channel strip recorder, Excel export, live plot autoscaling, measurement
 cursor, and simulator are all retained.
 
-Version 2.x supports the current dual-channel hardware only. The same firmware
-may also be copied into other acquisition projects, but this desktop application
-remains specifically configured for the Franck–Hertz experiment. The retired analog
+Version 2.x supports the current dual-channel hardware only. This sketch is
+also the maintained firmware for the general-purpose
+[Serial Plotter V3](../SerialPlotter_V3/README.md); V3 references it directly
+instead of keeping a separate copy. This desktop application remains
+specifically configured for the Franck–Hertz experiment. The retired analog
 gain-switching hardware and its compatibility protocol are not part of this
 firmware or desktop application.
 
