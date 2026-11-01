@@ -1,0 +1,63 @@
+name: Build Windows Serial Plotters
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'SerialPlotter/**'
+      - 'SerialPlotter_V2/**'
+      - 'SerialPlotter_V3/**'
+      - '.github/workflows/windows-serial-plotters.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        include:
+          - directory: SerialPlotter
+            spec: StreamPlot.spec
+            package: StreamPlot
+          - directory: SerialPlotter_V2
+            spec: SerialPlotter_V2.spec
+            package: SerialPlotter_V2
+          - directory: SerialPlotter_V3
+            spec: SerialPlotter_V3.spec
+            package: SerialPlotter_V3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        working-directory: ${{ matrix.directory }}
+        run: |
+          python -m pip install --upgrade pip
+          if (Test-Path requirements-dev.txt) { python -m pip install -r requirements-dev.txt } else { python -m pip install numpy pyserial matplotlib pyinstaller }
+      - name: Build executable
+        working-directory: ${{ matrix.directory }}
+        run: python -m PyInstaller --noconfirm --clean ${{ matrix.spec }}
+      - name: Package executable
+        shell: pwsh
+        run: |
+          $source = Join-Path '${{ matrix.directory }}' 'dist'
+          $output = '${{ matrix.package }}-Windows.zip'
+          Compress-Archive -Path (Join-Path $source '*') -DestinationPath $output -Force
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.package }}-Windows
+          path: ${{ matrix.package }}-Windows.zip
+      - name: Publish release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          $tag = 'serial-plotters-windows'
+          gh release view $tag 2>$null
+          if ($LASTEXITCODE -ne 0) { gh release create $tag --title 'Windows Serial Plotters' --notes 'Windows executable packages for the three Serial Plotter versions.' }
+          gh release upload $tag '${{ matrix.package }}-Windows.zip' --clobber
