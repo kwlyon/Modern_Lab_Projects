@@ -39,8 +39,9 @@ for the full electrical description.
 The **Averages / point** control selects 1–64 A/B conversion pairs for each
 plotted row. Choose a number and select **Apply on Arduino**; the label changes
 to *confirmed* when the Arduino replies `OK,avg,N`. The selection is also sent
-automatically after every connection or Arduino reset. V3 initially selects 10;
-the sketch itself defaults to 1 after power-up.
+automatically after every connection or Arduino reset. V3 initially selects 1,
+matching the sketch's power-up default, so each plotted row uses one A/B
+conversion pair unless you choose averaging.
 
 The Arduino averages the signed raw ADC counts for each channel **before** it
 sends a row. V3 does not average the received rows again. The firmware uses the

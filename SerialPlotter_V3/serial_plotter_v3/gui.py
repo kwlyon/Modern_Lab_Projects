@@ -951,6 +951,8 @@ def run_gui_smoke_test() -> None:
             app.apply_average_button.winfo_ismapped()
         ):
             failures.append("Arduino averaging controls were not visible")
+        if app.average_var.get() != "1":
+            failures.append("Arduino averaging did not default to one pair")
         if not app.autoscale_checkbutton.winfo_ismapped():
             failures.append("plot autoscale control was not visible")
         if app.invert_a_var.get() or app.invert_b_var.get():
