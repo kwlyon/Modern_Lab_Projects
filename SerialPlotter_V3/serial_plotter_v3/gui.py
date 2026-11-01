@@ -63,6 +63,8 @@ class SerialPlotterV3App(tk.Tk):
         self.autorange_var = tk.BooleanVar(value=True)
         self.channel_a_enabled_var = tk.BooleanVar(value=True)
         self.channel_b_enabled_var = tk.BooleanVar(value=True)
+        self.invert_a_var = tk.BooleanVar(value=False)
+        self.invert_b_var = tk.BooleanVar(value=False)
         self.average_var = tk.StringVar(value=str(config.DEFAULT_AVERAGES))
         self.average_status_var = tk.StringVar(value="Arduino averaging: not connected")
         default_range = self._format_adc_range(config.DEFAULT_ADC_RANGE_VOLTS)
@@ -211,6 +213,17 @@ class SerialPlotterV3App(tk.Tk):
         ttk.Label(controls, textvariable=self.average_status_var).grid(
             row=2, column=4, columnspan=5, sticky="w", pady=(8, 2)
         )
+        ttk.Label(controls, text="Polarity:").grid(row=3, column=1, sticky="w")
+        self.invert_a_checkbutton = ttk.Checkbutton(
+            controls, text="Invert A", variable=self.invert_a_var,
+            command=lambda: self._redraw_plot(force=True),
+        )
+        self.invert_a_checkbutton.grid(row=3, column=2, sticky="w")
+        self.invert_b_checkbutton = ttk.Checkbutton(
+            controls, text="Invert B", variable=self.invert_b_var,
+            command=lambda: self._redraw_plot(force=True),
+        )
+        self.invert_b_checkbutton.grid(row=3, column=3, sticky="w")
 
         status_frame = ttk.Frame(self, padding=(12, 2, 12, 4))
         status_frame.pack(fill=tk.X)
@@ -560,6 +573,8 @@ class SerialPlotterV3App(tk.Tk):
                 self.controller.calibration,
                 include_a,
                 include_b,
+                invert_channel_a=self.invert_a_var.get(),
+                invert_channel_b=self.invert_b_var.get(),
             )
         except (OSError, PermissionError, ValueError) as exc:
             messagebox.showerror("Export failed", str(exc))
@@ -747,6 +762,10 @@ class SerialPlotterV3App(tk.Tk):
         self.count_var.set(f"{count:,} point" + ("" if count == 1 else "s"))
         self._last_plotted_count = count
         times, channel_a_values, channel_b_values = downsample_for_display(points)
+        if self.invert_a_var.get():
+            channel_a_values = [-value for value in channel_a_values]
+        if self.invert_b_var.get():
+            channel_b_values = [-value for value in channel_b_values]
         show_a = self.channel_a_enabled_var.get()
         show_b = self.channel_b_enabled_var.get()
         self.channel_a_line.set_data(
@@ -934,6 +953,10 @@ def run_gui_smoke_test() -> None:
             failures.append("Arduino averaging controls were not visible")
         if not app.autoscale_checkbutton.winfo_ismapped():
             failures.append("plot autoscale control was not visible")
+        if app.invert_a_var.get() or app.invert_b_var.get():
+            failures.append("channel inversion was enabled by default")
+        if not app.invert_a_checkbutton.winfo_ismapped() or not app.invert_b_checkbutton.winfo_ismapped():
+            failures.append("channel inversion controls were not visible")
         toolbar_tools = {item[0] for item in app.toolbar.toolitems if item[0]}
         if not {"Home", "Pan", "Zoom"}.issubset(toolbar_tools):
             failures.append("plot navigation tools were incomplete")
@@ -977,6 +1000,20 @@ def run_gui_smoke_test() -> None:
             failures.append("both-channel traces were not assigned to opposite axes")
         if not app.secondary_axes.get_visible():
             failures.append("right axis was hidden with both channels selected")
+
+        app.invert_a_var.set(True)
+        app._redraw_plot(force=True)
+        if list(app.channel_a_line.get_ydata()) != [-value for value in values_a]:
+            failures.append("Channel A inversion did not update the plot")
+        if list(app.channel_b_right_line.get_ydata()) != values_b:
+            failures.append("Channel A inversion changed Channel B")
+        app.invert_a_var.set(False)
+        app.invert_b_var.set(True)
+        app._redraw_plot(force=True)
+        if list(app.channel_b_right_line.get_ydata()) != [-value for value in values_b]:
+            failures.append("Channel B inversion did not update the plot")
+        app.invert_b_var.set(False)
+        app._redraw_plot(force=True)
 
         app.channel_b_enabled_var.set(False)
         app._channel_selection_changed("B")

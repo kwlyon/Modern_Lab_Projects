@@ -60,6 +60,23 @@ class ExportTests(unittest.TestCase):
         finally:
             path.unlink(missing_ok=True)
 
+    def test_inversion_changes_only_selected_connector_voltage(self) -> None:
+        path = self.directory / "inverted.xlsx"
+        try:
+            export_xlsx(
+                path, (self.point,), Calibration(),
+                invert_channel_a=True, invert_channel_b=False,
+            )
+            workbook = load_workbook(path, data_only=True)
+            sheet = workbook["Serial Data"]
+            self.assertEqual(sheet.cell(2, 3).value, -1.0)
+            self.assertEqual(sheet.cell(2, 4).value, self.point.channel_a_adc_v)
+            self.assertEqual(sheet.cell(2, 7).value, 2.0)
+            self.assertTrue(workbook["Calibration"].cell(6, 2).value)
+            workbook.close()
+        finally:
+            path.unlink(missing_ok=True)
+
     def test_export_rejects_no_channels(self) -> None:
         with self.assertRaises(ValueError):
             data_headers(False, False)

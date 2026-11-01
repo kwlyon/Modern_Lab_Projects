@@ -43,6 +43,8 @@ def export_xlsx(
     calibration: Calibration,
     include_channel_a: bool = True,
     include_channel_b: bool = True,
+    invert_channel_a: bool = False,
+    invert_channel_b: bool = False,
 ) -> int:
     """Export the complete timebase and only the currently selected channels."""
 
@@ -61,7 +63,7 @@ def export_xlsx(
         if include_channel_a:
             row.extend(
                 (
-                    point.channel_a_voltage_v,
+                    -point.channel_a_voltage_v if invert_channel_a else point.channel_a_voltage_v,
                     point.channel_a_adc_v,
                     point.channel_a_adc_counts,
                     point.channel_a_adc_range_v,
@@ -70,7 +72,7 @@ def export_xlsx(
         if include_channel_b:
             row.extend(
                 (
-                    point.channel_b_voltage_v,
+                    -point.channel_b_voltage_v if invert_channel_b else point.channel_b_voltage_v,
                     point.channel_b_adc_v,
                     point.channel_b_adc_counts,
                     point.channel_b_adc_range_v,
@@ -95,6 +97,8 @@ def export_xlsx(
         ("Channel A offset", calibration.channel_a_offset_v, "V"),
         ("Channel B scale", calibration.channel_b_scale, "V corrected per V reported"),
         ("Channel B offset", calibration.channel_b_offset_v, "V"),
+        ("Invert Channel A", invert_channel_a, "Connector voltage sign in Serial Data"),
+        ("Invert Channel B", invert_channel_b, "Connector voltage sign in Serial Data"),
         ("Hardware scaling", "Applied by firmware", "EEPROM divider configuration"),
         ("Averaging", "Applied by firmware", "Pairs per row are recorded in Serial Data"),
     ):

@@ -85,6 +85,11 @@ live** changes only the plot view. **ADC Autorange** changes the converter's
 electrical range; when disabled, you can select A and B ranges separately.
 Stopping acquisition retains collected data until **Clear Data** is confirmed.
 
+**Invert A** and **Invert B** independently reverse the displayed connector
+voltage polarity. Both start unchecked. Excel exports use the polarity selected
+at export time and record those selections in the Calibration sheet. Raw ADC
+counts and ADC-node voltages remain unmodified.
+
 Exports include signed connector voltages, raw counts, ADC-node voltages,
 active ADC ranges, and the Arduino averaging count for every row. The optional
 desktop scale/offset correction defaults to 1.0/0.0; the firmware has already
